@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fe725d;
+}
+
+
+nav {
+    width: 100vw;
+    height: 60vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-main-container {
+    width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.nav-main-container div {
+    padding: 0.5rem;
+    margin: 0.5rem 0.2rem;
+    font-weight: 500;
+    color: rgb(242, 242, 242);
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.active {
+    font-weight: 600;
+}
+
+.dot {
+    display: block;
+    height: 0.1rem;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+}
+
+.nav-main-container i {
+    font-size: 0.8rem;
+    margin: 1rem;
+    color: #fcafa3;
+}
+
+.nav-section-container {
+    background-color: #e69083;
+    border-radius: 10px;
+    max-width: 70%;
+    max-height: 40%;
+    position: absolute;
+    right: 10%;
+    z-index: 1;
+    display: flex;
+    box-shadow: 0 5px 20px -10px rgb(78, 78, 78);
+}
+
+.section {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: start;
+    border-right: 1px solid #ffb1a57e;
+}
+
+.section h3 {
+    color: rgb(255, 255, 255);
+    margin-bottom: 1rem;
+    font-weight: 350;
+    letter-spacing: 0.2rem;
+}
+
+a {
+    color: rgb(223, 220, 220);
+    font-weight: 300;
+}
+
+
+
+.section li,
+h3 {
+    list-style: none;
+    padding: .2rem;
+}
+
+.section li a {
+    text-decoration: none;
+}
+
+.section li a:hover {
+    background-color: #f4ada2;
+    margin: 1rem 0 0 0;
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    color: #f12708;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+
+
+.nav-section-container img {
+    filter: opacity(60%);
+    border-radius: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.blog-content:hover {
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.02);
+}
+
+.nav-section-container .no-br h5 {
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.author {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.date {
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+.nav-section-container .no-br {
+    border: none;
+}
+
+.hidden {
+    transform: translate(0, -500px) scale(0.1);
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+    animation: fadeout 0.3s finite;
+}
