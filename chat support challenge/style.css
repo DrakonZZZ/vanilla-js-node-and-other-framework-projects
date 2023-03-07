@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(40, 43, 47);
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.main-container {
+    height: 600px;
+    border-radius: 20px;
+    box-shadow: 1px 20px 20px 5px #1f1f1f;
+}
+
+.head-section {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    background-color: rgb(78, 68, 88);
+    width: 400px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.head-section .avatars {
+    margin: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.head-section .end-username h3 {
+    font-size: 1rem;
+}
+
+.head-section .end-username p {
+    font-size: 0.7rem;
+}
+
+
+
+.head-section div img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -15px;
+}
+
+
+.head-section div img:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+
+
+
+.text-section {
+    background-color: rgb(145, 131, 159);
+    height: 80%;
+    padding: 1rem;
+}
+
+.text-section ul {
+    list-style: none;
+}
+
+.item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item p {
+    background-color: rgb(78, 68, 88);
+    padding: 1.5rem;
+    color: rgb(241, 241, 241);
+    font-weight: 400;
+    border-radius: 10px;
+}
+
+.chat-second {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.chat-second p {
+    background-color: rgb(107, 96, 120);
+}
+
+.chat-third {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly
+}
+
+.chat-second p {
+    background-color: rgb(107, 96, 120);
+}
+
+
+
+.text-section img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -10px;
+}
+
+
+.user-input {
+    background-color: rgb(78, 68, 88);
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.user-input input[type='text'] {
+    margin: 0.8rem;
+    width: 75%;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: rgb(232, 232, 232);
+}
+
+.user-input button {
+    width: 20%;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    margin-right: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: rgb(189, 167, 210);
+    border: none;
+}
+
+.user-input button:hover {
+    transition: all 0.s ease-in-out;
+    background-color: rgb(46, 44, 48);
+    color: white
+}
+
+.xross {
+    width: 45px;
+    color: white;
+    background-color: rgb(78, 68, 88);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    padding: 0.2rem;
+    float: right;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.xross-rotate {
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
+    transform: rotate(45deg);
+}
+
+.hidden {
+    animation: hide 0.5s forwards;
+}
+
+@keyframes hide {
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
