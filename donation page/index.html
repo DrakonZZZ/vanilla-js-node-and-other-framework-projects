@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container container-1">
+            <div class="donation-about">
+                <h1>Help us with your generosity</h1>
+                <p> We're a nonprofit that heavily relies on support from online patrons like you. We would appreciate
+                    any form of donation for from your, so, we can thrive for years.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="user-donation-info">
+                <div class="period">
+                    <h3>Select donation period</h3>
+                    <div class="switches-container">
+                        <input type="radio" id="switchMonthly" name="switchPlan" value="Monthly" checked="checked" />
+                        <input type="radio" id="switchYearly" name="switchPlan" value="Yearly" />
+                        <label for="switchMonthly">Monthly</label>
+                        <label for="switchYearly">One Time</label>
+                        <div class="switch-wrapper">
+                            <div class="switch">
+                                <div>Monthly</div>
+                                <div>One Time</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="range">
+                        <h3>Select amount (in US dolla)</h3>
+                        <button class="amount-btn">$5</button>
+                        <button class="amount-btn">$10</button>
+                        <button class="amount-btn">$20</button>
+                        <button class="amount-btn">$50</button>
+                        <button class="amount-btn">Other</button>
+                    </div>
+                    <form action="/">
+                        <div class="additional-charges">
+                            <input type="checkbox" name="Agree" id="check">
+                            <p>I Agree to add 0.75 each month to cover the transction fees.</p>
+                        </div>
+                        <div class="box-input">
+                            <div class="name-float">Name</div>
+                            <input type="text" name="name" id="" maxlength="10" required>
+                        </div>
+                        <div class="box-input">
+                            <div class="name-float">Email</div>
+                            <input type="email" name="name" id="" required>
+                        </div>
+                        <a href="">Click here to give in honor of other person</a>
+                        <button type="submit" class="submit-btn">Donate</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
