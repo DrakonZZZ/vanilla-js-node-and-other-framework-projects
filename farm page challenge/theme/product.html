@@ -230,30 +230,30 @@
     <h1>🥦 Farm Fresh 🌽</h1>
 
     <figure class="product">
-      <div class="product__organic">
+      <div class="product__organic {%ProductOrganic%}">
         <h5>Organic</h5>
       </div>
-      <a href="#" class="product__back">Back
+      <a href="/overview" class="product__back">Back
       </a>
       <div class="product__hero">
         <span class="product__emoji product__emoji--1">{%ProductImage%}</span>
       </div>
-      <h2 class="product__name">{%ProductName%}/h2>
-        <div class="product__details">
-          <p><span class="emoji-left">🌍</span> From: {%ProductRegion%}</p>
-          <p><span class="emoji-left">❤️</span>{%ProductVit%}</p>
-          <p><span class="emoji-left">📦</span>{%ProductQuantity%}</p>
-          <p><span class="emoji-left">🏷</span>{%ProductPrice%}$</p>
-        </div>
+      <h2 class="product__name">{%ProductName%}</h2>
+      <div class="product__details">
+        <p><span class="emoji-left">🌍</span> From: {%ProductRegion%}</p>
+        <p><span class="emoji-left">❤️</span>{%ProductVit%}</p>
+        <p><span class="emoji-left">📦</span>{%ProductQuantity%}</p>
+        <p><span class="emoji-left">🏷</span>{%ProductPrice%}$</p>
+      </div>
 
-        <a href="#" class="product__link">
-          <span class="emoji-left">🛒</span>
-          <span>Add to shopping card ({%ProductPrice%}$)</span>
-        </a>
+      <a href="#" class="product__link">
+        <span class="emoji-left">🛒</span>
+        <span>Add to shopping card ({%ProductPrice%}$)</span>
+      </a>
 
-        <p class="product__description">
-          {%description%}
-        </p>
+      <p class="product__description">
+        {%ProductDesc%}
+      </p>
     </figure>
 
   </div>
