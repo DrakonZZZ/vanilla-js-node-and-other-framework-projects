@@ -21,7 +21,7 @@ const Wrapper = styled.section`
   margin: 1rem 0;
 `;
 
-const SubWrapper = styled.div`
+export const SubWrapper = styled.div`
   color: #0096ff;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ const PriceItem = ({ title, date, amount }) => {
     <>
       <Wrapper>
         <Title>
-          <Dates date={date} />
+          <Dates date={new Date(date)} />
         </Title>
 
         <SubWrapper>
@@ -55,6 +55,6 @@ const PriceItem = ({ title, date, amount }) => {
 PriceItem.propTypes = {
   title: PropTypes.string,
   amount: PropTypes.number,
-  date: PropTypes.object,
+  date: PropTypes.object || PropTypes.string,
 };
 export default PriceItem;

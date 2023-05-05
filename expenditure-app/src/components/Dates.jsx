@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const DateFormat = styled.div`
+export const StyledDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #504f54;
+  background: ${(props) => props.background};
   padding: 0.2em 1rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border: 2px solid white;
+  color: ${(props) => props.color};
 `;
 
 const Date = styled.div`
@@ -22,17 +23,17 @@ const Dates = ({ date }) => {
   let day = date.toLocaleString('en-US', { day: '2-digit' });
   return (
     <>
-      <DateFormat>
+      <StyledDiv>
         <Date size="0.8rem">{year}</Date>
         <Date size="0.8rem">{month}</Date>
         <Date size="2rem">{day}</Date>
-      </DateFormat>
+      </StyledDiv>
     </>
   );
 };
 
 Dates.propTypes = {
-  date: PropTypes.object,
+  date: PropTypes.object || PropTypes.string,
 };
 
 export default Dates;

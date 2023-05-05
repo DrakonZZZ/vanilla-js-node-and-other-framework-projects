@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import styled from 'styled-components';
-import Items from './components/Items';
+import { StyledDiv } from './components/Dates';
 import { Devices } from './components/Devices';
+import Items from './components/Items';
+import AddExpense from './components/AddExpense';
 
 const Container = styled.div`
-  padding: 4rem;
+  padding: 2rem 4rem;
   background-color: #504f54;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
     rgba(0, 0, 0, 0.22) 0px 10px 10px;
@@ -11,7 +14,7 @@ const Container = styled.div`
   width: 90vw;
   display: flex;
   flex-direction: column;
-  margin: 5rem auto;
+  margin: 1rem auto;
   @media ${Devices.sm} {
     max-width: 80vw;
   }
@@ -26,31 +29,42 @@ const Container = styled.div`
 const MainHeader = styled.h1`
   text-align: center;
   color: white;
+  margin-bottom: 1rem;
 `;
 
+const dummyExpenses = [
+  { id: 1, title: 'Rental car', amount: 40, date: new Date(2021, 0, 1) },
+  { id: 2, title: 'Bidet', amount: 240, date: new Date(2021, 2, 11) },
+  {
+    id: 3,
+    title: 'Hooks and cables',
+    amount: 120,
+    date: new Date(2022, 4, 17),
+  },
+  { id: 4, title: 'chainsaw', amount: 155, date: new Date(2022, 6, 22) },
+];
+
 function App() {
-  const expenses = [
-    { id: 1, title: 'Rental car', amount: 40, date: new Date(2022, 0, 1) },
-    { id: 2, title: 'Bidet', amount: 240, date: new Date(2022, 2, 11) },
-    {
-      id: 3,
-      title: 'Hooks and cables',
-      amount: 120,
-      date: new Date(2022, 4, 17),
-    },
-    { id: 4, title: 'chainsaw', amount: 155, date: new Date(2022, 6, 22) },
-  ];
+  const [expenses, setExpenses] = useState(dummyExpenses);
+
+  const expenseHandler = (enterExpense) => {
+    const newExpenseData = {
+      ...enterExpense,
+      id: Math.random().toString(),
+    };
+
+    setExpenses((expenses) => {
+      return [newExpenseData, ...expenses];
+    });
+  };
+
   return (
     <Container>
-      <MainHeader> Expenses Tracker </MainHeader>
-      {expenses.map((item) => (
-        <Items
-          key={item.id}
-          title={item.title}
-          amount={item.amount}
-          date={item.date}
-        />
-      ))}
+      <MainHeader>
+        <StyledDiv>Expenses Tracker </StyledDiv>
+      </MainHeader>
+      <AddExpense expenseData={expenseHandler} />
+      <Items list={expenses} />
     </Container>
   );
 }
