@@ -35,14 +35,14 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 1rem;
+  margin-right: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
-  display: flex;
-  justify-content: flex-end;
 `;
 
-const AddExpense = ({ expenseData }) => {
+const AddExpense = ({ expenseData, onClose }) => {
   const [userInput, setUserInput] = useState({
     title: '',
     amount: '',
@@ -69,6 +69,7 @@ const AddExpense = ({ expenseData }) => {
     e.preventDefault();
     expenseData(userInput);
     setUserInput({ ...userInput, title: '', amount: '', date: '' });
+    onClose();
   };
 
   return (
@@ -78,6 +79,7 @@ const AddExpense = ({ expenseData }) => {
           <StyledLabel htmlFor="">Title</StyledLabel>
           <StyledInput
             type="text"
+            required
             value={userInput.title}
             onChange={changeTitleHandler}
           />
@@ -88,6 +90,7 @@ const AddExpense = ({ expenseData }) => {
             type="Date"
             min="01-01-2022"
             max="12-30-2023"
+            required
             value={userInput.date}
             onChange={changeDateHandler}
           />
@@ -98,11 +101,13 @@ const AddExpense = ({ expenseData }) => {
             type="number"
             min="0.01"
             step="0.01"
+            required
             value={userInput.amount}
             onChange={changeAmountHandler}
           />
         </div>
         <div>
+          <StyledButton onClick={onClose}>Cancel</StyledButton>
           <StyledButton type="submit">Add Expenses</StyledButton>
         </div>
       </StyledForm>
@@ -112,6 +117,7 @@ const AddExpense = ({ expenseData }) => {
 
 AddExpense.propTypes = {
   expenseData: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 export default AddExpense;

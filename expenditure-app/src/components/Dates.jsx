@@ -23,7 +23,7 @@ const Dates = ({ date }) => {
   let day = date.toLocaleString('en-US', { day: '2-digit' });
   return (
     <>
-      <StyledDiv>
+      <StyledDiv background="#333333">
         <Date size="0.8rem">{year}</Date>
         <Date size="0.8rem">{month}</Date>
         <Date size="2rem">{day}</Date>

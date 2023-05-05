@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { StyledDiv } from './components/Dates';
+import { StyledButton } from './components/AddExpense';
 import { Devices } from './components/Devices';
 import Items from './components/Items';
+
 import AddExpense from './components/AddExpense';
 
 const Container = styled.div`
@@ -58,12 +60,31 @@ function App() {
     });
   };
 
+  const [active, setActive] = useState(false);
+
+  const activeButton = () => {
+    setActive(true);
+  };
+
+  const closeWindow = () => {
+    setActive(false);
+  };
+
   return (
     <Container>
       <MainHeader>
         <StyledDiv>Expenses Tracker </StyledDiv>
       </MainHeader>
-      <AddExpense expenseData={expenseHandler} />
+
+      {active && (
+        <AddExpense expenseData={expenseHandler} onClose={closeWindow} />
+      )}
+      {!active && (
+        <div>
+          <StyledButton onClick={activeButton}>Add New Expenses</StyledButton>
+        </div>
+      )}
+
       <Items list={expenses} />
     </Container>
   );
