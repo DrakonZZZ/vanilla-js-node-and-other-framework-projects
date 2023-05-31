@@ -6,7 +6,6 @@ const List = ({ people }) => {
       <h3>You have {people.length} people in your contact list</h3>
       <ul>
         {people.map((list) => {
-          console.log(list);
           return (
             <li key={list.login.uuid} className="person">
               <div>

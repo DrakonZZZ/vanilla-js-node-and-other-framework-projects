@@ -1,41 +1,31 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import List from './List';
+import Contact from './Contact';
+import Loading from './Loading';
 
 const Layout = () => {
   const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getUsers = async () => {
       try {
         const getData = await fetch('https://randomuser.me/api/?results=8');
         const jsonData = await getData.json();
-        console.log(jsonData);
         setList(jsonData.results);
       } catch (error) {
         console.log(error);
       }
+      setLoading(false);
     };
     getUsers();
   }, []);
 
-  const clearLog = () => {
-    setList([]);
-  };
+  if (loading) {
+    return <Loading />;
+  }
 
-  return (
-    <main>
-      <section className="container">
-        <h2>Call Ramainder</h2>
-        <List people={list} />
-        {list.length !== 0 && (
-          <button className="btn" onClick={clearLog}>
-            Clear
-          </button>
-        )}
-      </section>
-    </main>
-  );
+  return <Contact data={list} />;
 };
 
 export default Layout;
