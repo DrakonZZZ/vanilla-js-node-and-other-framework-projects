@@ -1,22 +1,9 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import List from './List';
 
-const Contact = () => {
-  const [list, setList] = useState([]);
-
-  useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const getData = await fetch('https://randomuser.me/api/?results=8');
-        const jsonData = await getData.json();
-        setList(jsonData.results);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getUsers();
-  }, []);
+const Contact = ({ data }) => {
+  const [list, setList] = useState(data);
 
   const clearLog = () => {
     setList([]);
