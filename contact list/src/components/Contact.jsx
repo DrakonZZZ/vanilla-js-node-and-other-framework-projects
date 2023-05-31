@@ -1,7 +1,23 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import List from './List';
 
-const Contact = ({ data }) => {
+const Contact = () => {
+  const [list, setList] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const getData = await fetch('https://randomuser.me/api/?results=8');
+        const jsonData = await getData.json();
+        setList(jsonData.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUsers();
+  }, []);
+
   const clearLog = () => {
     setList([]);
   };
@@ -9,8 +25,8 @@ const Contact = ({ data }) => {
     <main>
       <section className="container">
         <h2>Call Ramainder</h2>
-        <List people={data} />
-        {data.length !== 0 && (
+        <List people={list} />
+        {list.length !== 0 && (
           <button className="btn" onClick={clearLog}>
             Clear
           </button>

@@ -21,11 +21,26 @@ const Layout = () => {
     getUsers();
   }, []);
 
+  const clearLog = () => {
+    setList([]);
+  };
+
   if (loading) {
     return <Loading />;
   }
 
-  return <Contact data={list} />;
+  return (
+    <>
+      {' '}
+      <Contact data={list}>
+        {list.length !== 0 && (
+          <button className="btn" onClick={clearLog}>
+            Clear
+          </button>
+        )}
+      </Contact>
+    </>
+  );
 };
 
 export default Layout;
