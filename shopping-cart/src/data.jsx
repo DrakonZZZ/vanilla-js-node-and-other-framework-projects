@@ -1,23 +1,23 @@
 export default [
   {
     id: 1,
-    title: 'Samsung Galaxy S7',
-    price: 599.99,
-    img: 'https://dl.airtable.com/.attachments/91ee456448cef47deec553a2ea3fa8ad/b08bec68/phone-2_ohtt5s.png',
+    title: 'Xbox X | Black 1 TB',
+    price: 520.99,
+    img: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSkCSB-xV69hOXveya1MYF0dIMU2A_3Yxr88LokPiIK6xsBtEjE4MvoufDw-d_X8W-rPvqfEJQdawmGvSJrdnqU79HRSNV47V7TI--lmT0j-dFKqsZy7i1RpgLkDp1WIihstQ&usqp=CAc',
     amount: 1,
   },
   {
     id: 2,
-    title: 'google pixel ',
-    price: 499.99,
-    img: 'https://dl.airtable.com/.attachments/91c88ae8c1580e2b762ecb3f73ed1eed/a633139a/phone-1_gvesln.png',
+    title: 'Nintendo Switch',
+    price: 355.99,
+    img: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSU_KAWE3C0YwDJOuMb_45n55XN3nulNkxbw35uUwbIHAuvGo_1cuhwZMRHopvzyPY03cDaP8wv5pHb4wYDBjZyPVNCT9c4RYMcxbuGK4-q8zYrls-MEs59Q1bYz0Uh2iL8W-s&usqp=CAc',
     amount: 1,
   },
   {
     id: 3,
-    title: 'Xiaomi Redmi Note 2',
-    price: 699.99,
-    img: 'https://dl.airtable.com/.attachments/bae9208dc34f35128749ecda5b999e84/337c285d/phone-3_h2s6fo.png',
+    title: 'Sony | PlayStation 5',
+    price: 599.99,
+    img: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcScKL2oJeBX2xG-DT5L5CkICU6OcJ2Pdcvx9IP1rU7eHIDkUwi2zpNryisfYlHIqLdxTv32S33r4uhE4V3X21DuFgFq_CUr4ObY_IDP4DLXag-eQAkMvEaU&usqp=CAc',
     amount: 1,
   },
 ];
