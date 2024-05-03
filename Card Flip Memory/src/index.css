@@ -1,0 +1,33 @@
+.board {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Defines two equal-width columns */
+  gap: 10px; /* Adds some space between grid items */
+  padding: 20px; /* Adds padding around the grid */
+  width: 100vw; /* Full viewport width */
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+  background-color: rgb(233, 233, 233);
+}
+.tile {
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: white;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
+}
